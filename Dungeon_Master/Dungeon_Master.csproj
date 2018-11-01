@@ -316,6 +316,7 @@
     <Compile Include="Assets\New Folder\iTween\Sample\RotateSample.cs" />
     <Compile Include="Assets\New Folder\iTween\Sample\SampleInfo.cs" />
     <Compile Include="Assets\New Folder\iTweenPath\iTweenPath.cs" />
+    <Compile Include="Assets\Script\CameraRotation.cs" />
     <Compile Include="Assets\Script\PreparationManager.cs" />
     <Compile Include="Assets\Script\Ray\SkipRayer.cs" />
     <Compile Include="Assets\Script\SceneLoadManager.cs" />
