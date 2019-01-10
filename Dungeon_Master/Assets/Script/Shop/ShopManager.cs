@@ -15,6 +15,8 @@ public class ShopManager : MonoBehaviour {
         for (int i = 0; i < m_Item.Length; i++)
         {
             m_Item[i].sprite = m_ItemDataBase.GetItemLists()[i].GetIcon();
+
+            m_Item[i].name = m_ItemDataBase.GetItemLists()[i].GetItemName();
         }
 		
 	}
@@ -23,4 +25,10 @@ public class ShopManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public Item GetItem(string searchName)
+    {
+        return m_ItemDataBase.GetItemLists().Find(itemName => itemName.GetItemName() == searchName);
+    }
+
 }
