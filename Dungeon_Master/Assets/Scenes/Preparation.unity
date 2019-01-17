@@ -785,6 +785,7 @@ MonoBehaviour:
   m_ShopManager: {fileID: 263575030}
   m_ShowCharacters: {fileID: 368192206}
   m_ItemDescription: {fileID: 368192204}
+  m_ObjectGenerationer: {fileID: 0}
 --- !u!1 &215631818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1227,7 @@ MonoBehaviour:
   m_ShopManager: {fileID: 263575030}
   m_ShowCharacters: {fileID: 368192206}
   m_ItemDescription: {fileID: 368192204}
+  m_ObjectGenerationer: {fileID: 0}
 --- !u!1 &315200362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2028,7 @@ MonoBehaviour:
   m_ShopManager: {fileID: 263575030}
   m_ShowCharacters: {fileID: 368192206}
   m_ItemDescription: {fileID: 368192204}
+  m_ObjectGenerationer: {fileID: 0}
 --- !u!1001 &621790633
 Prefab:
   m_ObjectHideFlags: 0
@@ -2409,6 +2412,7 @@ MonoBehaviour:
   m_ShopManager: {fileID: 263575030}
   m_ShowCharacters: {fileID: 368192206}
   m_ItemDescription: {fileID: 368192204}
+  m_ObjectGenerationer: {fileID: 0}
 --- !u!1 &724335157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,7 +4593,24 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1308696014}
-          m_MethodName: TapEvent
+          m_MethodName: TapDownEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1308696014}
+          m_MethodName: TapUpEvent
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4616,6 +4637,7 @@ MonoBehaviour:
   m_ShopManager: {fileID: 263575030}
   m_ShowCharacters: {fileID: 368192206}
   m_ItemDescription: {fileID: 368192204}
+  m_ObjectGenerationer: {fileID: 1478464775}
 --- !u!1 &1317352311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,6 +5438,49 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424592697}
   m_CullTransparentMesh: 0
+--- !u!1 &1478464773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1478464774}
+  - component: {fileID: 1478464775}
+  m_Layer: 0
+  m_Name: PurchaseItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1478464774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1478464773}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1999907468}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478464775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1478464773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1483e19eb789ffe4d8fc7b12dd85133a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PurchaseItem: {fileID: 1304256972644832, guid: f21025eb490501a42980b26b9d033ffd,
+    type: 2}
+  m_Canvas: {fileID: 1999907467}
 --- !u!1 &1489291188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6033,6 +6098,7 @@ MonoBehaviour:
   m_ShopManager: {fileID: 263575030}
   m_ShowCharacters: {fileID: 368192206}
   m_ItemDescription: {fileID: 368192204}
+  m_ObjectGenerationer: {fileID: 0}
 --- !u!1 &1773645545
 GameObject:
   m_ObjectHideFlags: 0
@@ -6846,6 +6912,7 @@ RectTransform:
   - {fileID: 23475653}
   - {fileID: 805030338}
   - {fileID: 1916904814}
+  - {fileID: 1478464774}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
