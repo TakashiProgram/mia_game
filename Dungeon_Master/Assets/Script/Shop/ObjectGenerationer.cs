@@ -22,16 +22,21 @@ public class ObjectGenerationer : MonoBehaviour {
         
     }
 
-    public void Generationer()
+    public void Generationer(Sprite image)
     {
       obj = Instantiate(m_PurchaseItem);
 
         obj.transform.parent = this.transform;
-        
+
+        obj.GetComponent<Image>().sprite = image;
+
+
     }
 
     public void Destroy()
     {
+        obj.GetComponent<PassThing>().Hit();
+
         Destroy(obj); 
     }
 }

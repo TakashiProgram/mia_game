@@ -24,7 +24,7 @@ public class CanvasUIManager : MonoBehaviour {
 
         this.GetComponent<Image>().color = new Color(1,1,1,0.5f);
 
-        m_ObjectGenerationer.Generationer();
+        m_ObjectGenerationer.Generationer(m_ShopManager.GetItem(this.name).GetIcon());
     }
 
     public void TapUpEvent()
