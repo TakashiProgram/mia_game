@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d469b0f35419445ab465e05b536b27, type: 3}
   m_Name: Soad
   m_EditorClassIdentifier: 
-  kindOfItem: 0
-  icon: {fileID: 21300000, guid: dc6af08782bddd04ab62c619530444ba, type: 3}
+  kindOfItem: 1
+  icon: {fileID: 21300000, guid: 5789d72cdb8a32a49ad6a78b6dd42cd6, type: 3}
   itemName: "\u30A2\u30A4\u30A2\u30F3\u30BD\u30FC\u30C9"
   information: "\u9244\u3067\u4F5C\u3089\u308C\u305F\u5263"

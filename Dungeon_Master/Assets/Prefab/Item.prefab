@@ -40,8 +40,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8.1353, y: 9.784058, z: 1}
+  m_Center: {x: -0.60788727, y: 0.46969604, z: 0}
 --- !u!114 &114199360369875972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PassThing: {fileID: 0}
-  mgjlsg: {fileID: 21300000, guid: 12d77d018e53e924fb7176442decc3b7, type: 3}
+  image: {fileID: 0}
 --- !u!114 &114720048299490926
 MonoBehaviour:
   m_ObjectHideFlags: 1

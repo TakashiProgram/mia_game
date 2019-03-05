@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Name: ItemDataBase
   m_EditorClassIdentifier: 
   itemLists:
+  - {fileID: 11400000, guid: 3cbad6003d538f047aaa5cb0225dc6df, type: 2}
+  - {fileID: 11400000, guid: e374ca7e4570b0c4ca16f0fece6eeaf5, type: 2}
+  - {fileID: 11400000, guid: 5be0823a8dbaf9b4a978e0c3ec0fe2e3, type: 2}
+  - {fileID: 11400000, guid: 4fb63aabfe04aa24eb3f72735aa96865, type: 2}
   - {fileID: 11400000, guid: 5c08923a26e906144a29149910a57b41, type: 2}
   - {fileID: 11400000, guid: 7dd91829e0d7e9f4f870b8654df1bf65, type: 2}
-  - {fileID: 11400000, guid: 7dd91829e0d7e9f4f870b8654df1bf65, type: 2}
-  - {fileID: 11400000, guid: 7dd91829e0d7e9f4f870b8654df1bf65, type: 2}
-  - {fileID: 11400000, guid: 7dd91829e0d7e9f4f870b8654df1bf65, type: 2}
-  - {fileID: 11400000, guid: 7dd91829e0d7e9f4f870b8654df1bf65, type: 2}
+  - {fileID: 11400000, guid: 3dc86f1972553e644a49a23043f91cf3, type: 2}

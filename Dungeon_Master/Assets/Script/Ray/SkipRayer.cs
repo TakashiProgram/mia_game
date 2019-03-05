@@ -13,8 +13,7 @@ public class SkipRayer : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit))
         {
-
-            Debug.Log(hit.collider.gameObject);
+            
             return hit.collider.gameObject;
         }
         return this.gameObject;

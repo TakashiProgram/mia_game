@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25d469b0f35419445ab465e05b536b27, type: 3}
-  m_Name: Item
+  m_Name: Coin
   m_EditorClassIdentifier: 
-  kindOfItem: 0
-  icon: {fileID: 21300000, guid: 18e67cbe7a76296458c1510fdecce054, type: 3}
-  itemName: s
-  information: sa
+  kindOfItem: 1
+  icon: {fileID: 21300000, guid: c963cd589d334c04e9a3d2877ebb6b5a, type: 3}
+  itemName: "\u91D1\u8CA8"
+  information: "\u91D1\u3067\u4F5C\u3089\u308C\u3066\u3044\u308B\u9AD8\u5024\u3067\u58F2\u308C\u308B"

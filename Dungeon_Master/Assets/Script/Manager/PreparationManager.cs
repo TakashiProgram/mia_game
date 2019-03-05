@@ -100,6 +100,7 @@ public class PreparationManager : MonoBehaviour
                     {
                         m_MoveLayer = UP_MOVE;
                         m_ShopMovePos = m_StartPos;
+                        
                        
                     }
 
@@ -178,7 +179,6 @@ public class PreparationManager : MonoBehaviour
             if (m_MainCamera.gameObject.GetComponent<Rigidbody>().IsSleeping())
             {
                 m_IsCameraRotation = false;
-                Debug.Log("止まっている");
             }
         }
     }
@@ -190,10 +190,12 @@ public class PreparationManager : MonoBehaviour
             m_CameraMover.Move(m_MainCamera, tager);
             m_MoveImage.layer = layer_count;
             this.gameObject.GetComponent<Camera>().enabled = false;
-            StartCoroutine(ShopMove());
+            m_ShopList[m_ShopCount].SetActive(false);
+            StartCoroutine(ShopMove(tager.z));
+
         }
     }
-    private IEnumerator ShopMove()
+    private IEnumerator ShopMove(float value)
     {
         yield return null;
         if (m_MainCamera.gameObject.GetComponent<Rigidbody>().IsSleeping())
@@ -201,8 +203,20 @@ public class PreparationManager : MonoBehaviour
            
             m_IsCameraMove = false;
             this.gameObject.GetComponent<Camera>().enabled = true;
+
+            if (value == 0)
+            {
+                m_ShopList[m_ShopCount].SetActive(false);
+
+                m_HitObject = false;
+                m_EnterStore = false;
+            }
+            else
+            {
+                m_ShopList[m_ShopCount].SetActive(true);
+            }
             
-            
+
         }
     }
 
