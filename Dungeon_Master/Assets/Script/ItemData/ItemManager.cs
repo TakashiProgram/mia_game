@@ -1,38 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ItemManager : MonoBehaviour
 {
-
-    //　アイテムデータベース
     [SerializeField]
-    private ItemDataBase itemDataBase;
-    //　アイテム数管理
-    private Dictionary<Item, int> numOfItem = new Dictionary<Item, int>();
+    [FormerlySerializedAs("m_ItemDataBase")]
+    private ItemDataBase m_ItemDataBase;
 
-    // Use this for initialization
+    private Dictionary<ItemSetting, int> m_NumOfItem = new Dictionary<ItemSetting, int>();
+
     void Start()
     {
-
-        for (int i = 0; i < itemDataBase.GetItemLists().Count; i++)
+        if (null == m_ItemDataBase)
         {
-            //　アイテム数を適当に設定
-          //  numOfItem.Add(itemDataBase.GetItemLists()[i], i);
-            //　確認の為データ出力
-            Debug.Log(itemDataBase.GetItemLists()[i].GetItemName() + ": " + itemDataBase.GetItemLists()[i].GetInformation());
+            return;
+        }
+
+        for (int i = 0; i < m_ItemDataBase.GetItem().Count; i++)
+        {
+
+            Debug.Log(m_ItemDataBase.GetItem()[i].GetName() + ": " + m_ItemDataBase.GetItem()[i].GetInformation());
         }
 
         Debug.Log(GetItem("アイアンソード").GetInformation());
-        Debug.Log(numOfItem[GetItem("アイアンソード")]);
+        Debug.Log(m_NumOfItem[GetItem("アイアンソード")]);
 
 
-        
+
     }
 
-    //　名前でアイテムを取得
-    public Item GetItem(string searchName)
+    public ItemSetting GetItem(string searchName)
     {
-        return itemDataBase.GetItemLists().Find(itemName => itemName.GetItemName() == searchName);
+        return m_ItemDataBase.GetItem().Find(itemName => itemName.GetName() == searchName);
     }
 }

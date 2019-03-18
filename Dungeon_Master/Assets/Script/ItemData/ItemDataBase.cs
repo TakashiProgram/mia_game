@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "ItemDataBase", menuName = "CreateItemDataBase")]
 public class ItemDataBase : ScriptableObject
 {
-
     [SerializeField]
-    private List<Item> itemLists = new List<Item>();
+    [FormerlySerializedAs("m_Item")]
+    private List<ItemSetting> m_Item = new List<ItemSetting>();
 
-    //　アイテムリストを返す
-    public List<Item> GetItemLists()
+    public List<ItemSetting> GetItem()
     {
-        return itemLists;
+        return m_Item;
     }
 }

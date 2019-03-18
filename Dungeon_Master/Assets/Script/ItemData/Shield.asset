@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d469b0f35419445ab465e05b536b27, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  kindOfItem: 0
-  icon: {fileID: 21300000, guid: 42645494040866e40a8a7c9cecd85363, type: 3}
-  itemName: "\u9244\u306E\u76FE"
-  information: "\u9244\u3067\u4F5C\u3089\u308C\u305F\u76FE"
+  m_KindOfItem: 0
+  m_IconImage: {fileID: 21300000, guid: 42645494040866e40a8a7c9cecd85363, type: 3}
+  m_Name: "\u9244\u306E\u76FE"
+  m_Information: "\u9244\u3067\u4F5C\u3089\u308C\u305F\u76FE"
