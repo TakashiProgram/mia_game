@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkipRayer : MonoBehaviour {
+public class RayCast : MonoBehaviour {
 
-    public GameObject SkipRay()
+    public GameObject TapRayer()
     {
 
         Ray ray = this.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
         
-
         if (Physics.Raycast(ray, out hit))
         {
-            
             return hit.collider.gameObject;
         }
         return this.gameObject;

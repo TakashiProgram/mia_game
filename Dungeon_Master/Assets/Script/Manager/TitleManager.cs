@@ -5,7 +5,7 @@ using UnityEngine;
 public class TitleManager : MonoBehaviour {
 
     [SerializeField]
-    private SkipRayer m_SkipRayer;
+    private RayCast m_SkipRayer;
 
     [SerializeField]
     private SceneLoadManager m_ScenemLoadManager;
@@ -20,10 +20,10 @@ public class TitleManager : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            if (m_SkipRayer.SkipRay().tag == PREPARATION)
+            if (m_SkipRayer.TapRayer().tag == PREPARATION)
             {
 
-                m_ScenemLoadManager.SceneLoad(m_SkipRayer.SkipRay().tag);
+                m_ScenemLoadManager.SceneLoad(m_SkipRayer.TapRayer().tag);
             }
         }
 

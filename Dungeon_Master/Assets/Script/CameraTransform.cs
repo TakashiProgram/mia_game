@@ -1,0 +1,28 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraTransform : MonoBehaviour
+{
+
+    private const int POS_SPEED = 6;
+
+    private const int ROT_SPEED = 3;
+
+    public void Move(GameObject main_camera, Vector3 target)
+    {
+        main_camera.transform.position = Vector3.MoveTowards(main_camera.transform.position, target, POS_SPEED * Time.deltaTime);
+
+    }
+
+    public void Rotation(GameObject main_camera, GameObject target_object)
+    {
+        Vector3 target_pos = target_object.transform.position - main_camera.transform.position;
+        if (null == target_pos)
+        {
+            return;
+        }
+        target_pos = Vector3.RotateTowards(main_camera.transform.forward, target_pos, ROT_SPEED * Time.deltaTime, 10.0F);
+        main_camera.transform.rotation = Quaternion.LookRotation(target_pos);
+    }
+}
