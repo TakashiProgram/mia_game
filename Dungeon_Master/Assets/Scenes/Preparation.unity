@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &97610533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -777,10 +777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e701e065ae7644a7f317f129b3632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopManager: {fileID: 263575030}
-  m_ShowCharacters: {fileID: 368192206}
-  m_ItemDescription: {fileID: 368192204}
-  m_ObjectGenerationer: {fileID: 1478464775}
+  m_SetItemData: {fileID: 263575030}
+  m_TextSetting: {fileID: 368192206}
+  m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &226995955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1140,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 292748178}
+        - m_Target: {fileID: 0}
           m_MethodName: TapDownEvent
           m_Mode: 1
           m_Arguments:
@@ -1158,7 +1157,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 292748178}
+        - m_Target: {fileID: 0}
           m_MethodName: TapUpEvent
           m_Mode: 1
           m_Arguments:
@@ -1183,10 +1182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e701e065ae7644a7f317f129b3632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopManager: {fileID: 263575030}
-  m_ShowCharacters: {fileID: 368192206}
-  m_ItemDescription: {fileID: 368192204}
-  m_ObjectGenerationer: {fileID: 1478464775}
+  m_SetItemData: {fileID: 263575030}
+  m_TextSetting: {fileID: 368192206}
+  m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &308565963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,8 +1642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46d7273d3dee164cb9f446576ec3178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SkipRayer: {fileID: 621790636}
+  m_RayCast: {fileID: 621790636}
   m_CameraTransform: {fileID: 621790637}
+  m_UiCamera: {fileID: 621790638}
   m_ScenemLoadManager: {fileID: 0}
   m_TargetObject:
   - {fileID: 97610532}
@@ -2086,7 +2085,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 582030561}
+        - m_Target: {fileID: 0}
           m_MethodName: TapDownEvent
           m_Mode: 1
           m_Arguments:
@@ -2103,7 +2102,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 582030561}
+        - m_Target: {fileID: 0}
           m_MethodName: TapUpEvent
           m_Mode: 1
           m_Arguments:
@@ -2128,10 +2127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e701e065ae7644a7f317f129b3632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopManager: {fileID: 263575030}
-  m_ShowCharacters: {fileID: 368192206}
-  m_ItemDescription: {fileID: 368192204}
-  m_ObjectGenerationer: {fileID: 1478464775}
+  m_SetItemData: {fileID: 263575030}
+  m_TextSetting: {fileID: 368192206}
+  m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &587047710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2290,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb2d2e96c4177244907797569fd382a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &621790638 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20816608557915512, guid: 954efffc58dc1b74d9f7f34f873ed4f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 621790633}
 --- !u!4 &621790640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4931314020250106, guid: 954efffc58dc1b74d9f7f34f873ed4f0,
@@ -2528,7 +2531,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 701611423}
+        - m_Target: {fileID: 0}
           m_MethodName: TapDownEvent
           m_Mode: 1
           m_Arguments:
@@ -2545,7 +2548,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 701611423}
+        - m_Target: {fileID: 0}
           m_MethodName: TapUpEvent
           m_Mode: 1
           m_Arguments:
@@ -2570,10 +2573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e701e065ae7644a7f317f129b3632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopManager: {fileID: 263575030}
-  m_ShowCharacters: {fileID: 368192206}
-  m_ItemDescription: {fileID: 368192204}
-  m_ObjectGenerationer: {fileID: 1478464775}
+  m_SetItemData: {fileID: 263575030}
+  m_TextSetting: {fileID: 368192206}
+  m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &724335157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4404,10 +4406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e701e065ae7644a7f317f129b3632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopManager: {fileID: 263575030}
-  m_ShowCharacters: {fileID: 368192206}
-  m_ItemDescription: {fileID: 368192204}
-  m_ObjectGenerationer: {fileID: 1478464775}
+  m_SetItemData: {fileID: 263575030}
+  m_TextSetting: {fileID: 368192206}
+  m_ObjectManager: {fileID: 1478464775}
 --- !u!4 &1315086396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4149166247754782, guid: f4208e526d2cf1a4ab6d91715e34104a,
@@ -5957,7 +5958,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1701458465}
+        - m_Target: {fileID: 0}
           m_MethodName: TapDownEvent
           m_Mode: 1
           m_Arguments:
@@ -5974,7 +5975,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1701458465}
+        - m_Target: {fileID: 0}
           m_MethodName: TapUpEvent
           m_Mode: 1
           m_Arguments:
@@ -5999,10 +6000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e701e065ae7644a7f317f129b3632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopManager: {fileID: 263575030}
-  m_ShowCharacters: {fileID: 368192206}
-  m_ItemDescription: {fileID: 368192204}
-  m_ObjectGenerationer: {fileID: 1478464775}
+  m_SetItemData: {fileID: 263575030}
+  m_TextSetting: {fileID: 368192206}
+  m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &1795632134
 GameObject:
   m_ObjectHideFlags: 0

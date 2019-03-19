@@ -6,10 +6,13 @@ public class CameraManager : MonoBehaviour
 {
 
     [SerializeField]
-    private RayCast m_SkipRayer;
+    private RayCast m_RayCast;
 
     [SerializeField]
     private CameraTransform m_CameraTransform;
+
+    [SerializeField]
+    private Camera m_UiCamera;
     
     [SerializeField]
     private SceneLoadManager m_ScenemLoadManager;
@@ -76,13 +79,13 @@ public class CameraManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            m_StartTapPos_X = m_SkipRayer.MousePos().x;
-            if (m_SkipRayer.TapRayer().tag == DECISION)
+            m_StartTapPos_X = m_RayCast.MousePos().x;
+            if (m_RayCast.RayerHitObject().tag == DECISION)
             {
                 m_HitObject = true;
 
 
-            }else if (m_SkipRayer.TapRayer().tag == MOVE)
+            }else if (m_RayCast.RayerHitObject().tag == MOVE)
             {
                 if (false == m_IsCameraRotation)
                 {
@@ -113,7 +116,7 @@ public class CameraManager : MonoBehaviour
         {
             if (false == m_HitObject)
             {
-                m_EndTapPos_X = m_SkipRayer.MousePos().x;
+                m_EndTapPos_X = m_RayCast.MousePos().x;
 
 
                 m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(0, (m_StartTapPos_X - m_EndTapPos_X) / 10 + m_Rotation, 0));
@@ -188,9 +191,9 @@ public class CameraManager : MonoBehaviour
     {
         if (true == m_IsCameraMove)
         {
-            m_CameraTransform.Move(m_MainCamera, tager);
+            m_CameraTransform.MovePos(m_MainCamera, tager);
             m_MoveImage.layer = layer_count;
-            this.gameObject.GetComponent<Camera>().enabled = false;
+            m_UiCamera.enabled = false;
             m_TargetObject[m_ShopCount].SetActive(false);
             StartCoroutine(ShopMove(tager.z));
 
@@ -203,7 +206,7 @@ public class CameraManager : MonoBehaviour
         {
            
             m_IsCameraMove = false;
-            this.gameObject.GetComponent<Camera>().enabled = true;
+            m_UiCamera.enabled = true;
 
             if (value == 0)
             {
