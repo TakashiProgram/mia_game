@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraManager : MonoBehaviour
 {
 
     [SerializeField]
+    [FormerlySerializedAs("m_ItemDataBase")]
     private RayCast m_RayCast;
 
     [SerializeField]
+    [FormerlySerializedAs("m_ItemDataBase")]
     private CameraTransform m_CameraTransform;
+
 
     [SerializeField]
     private Camera m_UiCamera;
-    
     [SerializeField]
+    [FormerlySerializedAs("m_ItemDataBase")]
     private SceneLoadManager m_ScenemLoadManager;
 
 
@@ -22,12 +26,15 @@ public class CameraManager : MonoBehaviour
 
 
     [SerializeField]
+    [FormerlySerializedAs("m_ItemDataBase")]
     private GameObject[] m_TargetObject;
-    
+
     [SerializeField]
+    [FormerlySerializedAs("m_ItemDataBase")]
     private GameObject m_MoveImage;
 
     [SerializeField]
+    [FormerlySerializedAs("m_ItemDataBase")]
     private GameObject m_MainCamera;
 
     private Vector3 m_StartPos;
@@ -67,25 +74,37 @@ public class CameraManager : MonoBehaviour
         m_MoveLayer = UP_MOVE;
 
         m_StartPos = m_MainCamera.transform.position;
-        
+
     }
 
     void Update()
     {
-      //  m_TargetObject
-        IsCameraRotation();
-        IsCameraMove(m_MoveLayer, m_ShopMovePos);
+        if (true == IsCameraRot())
+        {
+            m_CameraTransform.Rotation(m_MainCamera, m_TargetObject[m_ShopCount]);
+        }
 
+        IsCameraMove(m_MoveLayer, m_ShopMovePos);
+        if (null == m_RayCast)
+        {
+            return;
+        }
+        GameObject ray_cast = m_RayCast.RayerHitObject();
+        if (null == ray_cast)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
 
             m_StartTapPos_X = m_RayCast.MousePos().x;
-            if (m_RayCast.RayerHitObject().tag == DECISION)
+            if (ray_cast.tag == DECISION)
             {
                 m_HitObject = true;
 
 
-            }else if (m_RayCast.RayerHitObject().tag == MOVE)
+            }
+            else if (ray_cast.tag == MOVE)
             {
                 if (false == m_IsCameraRotation)
                 {
@@ -98,18 +117,18 @@ public class CameraManager : MonoBehaviour
                     {
                         m_MoveLayer = DOWN_MOVE;
                         m_ShopMovePos = m_TargetObject[m_ShopCount].transform.position;
-                       
+
                     }
                     else
                     {
                         m_MoveLayer = UP_MOVE;
                         m_ShopMovePos = m_StartPos;
-                        
-                       
+
+
                     }
 
                 }
-               
+
             }
         }
         else if (Input.GetMouseButton(0))
@@ -125,7 +144,7 @@ public class CameraManager : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            
+
             if (false == m_HitObject)
             {
                 if (m_StartTapPos_X + 300 <= m_EndTapPos_X)
@@ -170,24 +189,20 @@ public class CameraManager : MonoBehaviour
             {
                 m_HitObject = false;
             }
-           
+
         }
     }
-    //ここから
-    private void IsCameraRotation()
+    private bool IsCameraRot()
     {
-        if (true == m_IsCameraRotation)
+        if (m_MainCamera.gameObject.GetComponent<Rigidbody>().IsSleeping())
         {
-
-            m_CameraTransform.Rotation(m_MainCamera, m_TargetObject[m_ShopCount]);
-            if (m_MainCamera.gameObject.GetComponent<Rigidbody>().IsSleeping())
-            {
-                m_IsCameraRotation = false;
-            }
+            return false;
         }
+
+        return true;
     }
 
-    private void IsCameraMove(int layer_count,Vector3 tager)
+    private void IsCameraMove(int layer_count, Vector3 tager)
     {
         if (true == m_IsCameraMove)
         {
@@ -195,32 +210,30 @@ public class CameraManager : MonoBehaviour
             m_MoveImage.layer = layer_count;
             m_UiCamera.enabled = false;
             m_TargetObject[m_ShopCount].SetActive(false);
-            StartCoroutine(ShopMove(tager.z));
+            StartCoroutine(TargetMoveTo(tager.z));
 
         }
     }
-    private IEnumerator ShopMove(float value)
+    private IEnumerator TargetMoveTo(float value)
     {
         yield return null;
-        if (m_MainCamera.gameObject.GetComponent<Rigidbody>().IsSleeping())
+        if (true == IsCameraRot())
         {
-           
-            m_IsCameraMove = false;
-            m_UiCamera.enabled = true;
+            yield break;
+        }
+        m_IsCameraMove = false;
+        m_UiCamera.enabled = true;
 
-            if (value == 0)
-            {
-                m_TargetObject[m_ShopCount].SetActive(false);
+        if (value == 0)
+        {
+            m_TargetObject[m_ShopCount].SetActive(false);
 
-                m_HitObject = false;
-                m_EnterStore = false;
-            }
-            else
-            {
-                m_TargetObject[m_ShopCount].SetActive(true);
-            }
-            
-
+            m_HitObject = false;
+            m_EnterStore = false;
+        }
+        else
+        {
+            m_TargetObject[m_ShopCount].SetActive(true);
         }
     }
 

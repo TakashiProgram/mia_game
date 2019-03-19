@@ -40,7 +40,7 @@ public class ObjectManager : MonoBehaviour
     public void Destroy()
     {
         //仮で消している
-        // obj.GetComponent<PassThing>().Hit();
+        obj.GetComponent<PassThing>().Hit();
 
         Destroy(obj);
     }

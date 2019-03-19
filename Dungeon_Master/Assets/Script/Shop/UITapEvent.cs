@@ -13,8 +13,8 @@ public class UITapEvent : MonoBehaviour
     [FormerlySerializedAs("m_ItemDataBase")]
     private TextSetting m_TextSetting;
 
-    // [SerializeField]
-    // private Text m_ItemDescription;
+     [SerializeField]
+     private Text m_ItemDescription;
 
     [SerializeField]
     [FormerlySerializedAs("m_ItemDataBase")]

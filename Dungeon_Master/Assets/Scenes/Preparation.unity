@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &97610533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -779,6 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetItemData: {fileID: 263575030}
   m_TextSetting: {fileID: 368192206}
+  m_ItemDescription: {fileID: 0}
   m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &226995955
 GameObject:
@@ -1184,6 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetItemData: {fileID: 263575030}
   m_TextSetting: {fileID: 368192206}
+  m_ItemDescription: {fileID: 0}
   m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &308565963
 GameObject:
@@ -2129,6 +2131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetItemData: {fileID: 263575030}
   m_TextSetting: {fileID: 368192206}
+  m_ItemDescription: {fileID: 0}
   m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &587047710
 GameObject:
@@ -2575,6 +2578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetItemData: {fileID: 263575030}
   m_TextSetting: {fileID: 368192206}
+  m_ItemDescription: {fileID: 0}
   m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &724335157
 GameObject:
@@ -4408,6 +4412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetItemData: {fileID: 263575030}
   m_TextSetting: {fileID: 368192206}
+  m_ItemDescription: {fileID: 0}
   m_ObjectManager: {fileID: 1478464775}
 --- !u!4 &1315086396 stripped
 Transform:
@@ -6002,6 +6007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetItemData: {fileID: 263575030}
   m_TextSetting: {fileID: 368192206}
+  m_ItemDescription: {fileID: 0}
   m_ObjectManager: {fileID: 1478464775}
 --- !u!1 &1795632134
 GameObject:
